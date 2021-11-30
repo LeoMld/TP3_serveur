@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+
+        <title>data tennis App</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Les données disponibles</h1>
+        </header>
+        <h3>Instructions</h3>
+        <p>Vous trouverez ici les informations relatives au client sémantique proposant 2 types de ressource
+        pour chacune des données présentée ci-dessous. Vous pourrez accéder à la donnée en version text/html
+        ou rdf+xml en précisant le MIME-TYPE lors de la requête.</p>
+
+        <h3>Routes disponibles</h3>
+        <p>"/data" (text/html) -> cette page</p>
+        <p>"/data" (rdf+xml) -> Toutes les données</p>
+
+        <p>"/data/horaire" (rdf+xml et text/html) -> Les horaires des matchs</p>
+        <p>"/data/horaire/:id" (rdf+xml et text/html) -> Les horaires du match correspondant à l'id</p>
+
+        <p>"/data/joueur" (rdf+xml et text/html) -> La liste des joueurs</p>
+        <p>"/data/joueur/:id" (rdf+xml et text/html) -> Informations sur un joueur</p>
+
+        <p>"/data/resultat" (rdf+xml et text/html) -> Les resultats des matchs</p>
+        <p>"/data/resultat/:id" (rdf+xml et text/html) -> Résultat d'un match</p>
+    </body>
+</html>
+
