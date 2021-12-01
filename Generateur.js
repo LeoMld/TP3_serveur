@@ -5,12 +5,24 @@ const modificateurVitesse = 100;
 const listePartie = [];
 const listJoueur = [];
 
-listJoueur.push(new Joueur("Albert", "Ramos", 28, 56, "Espagne"))
-listJoueur.push(new Joueur("Milos", "Raonic", 28, 16, "Canada"))
-listJoueur.push(new Joueur("Andy", "Murray", 28, 132, "Angleterre"))
-listJoueur.push(new Joueur("Andy", "Roddick", 36, 1000, "États-Unis"))
-listJoueur.push(new Joueur("Roger", "Federer", 40, 2, "Suisse"))
-listJoueur.push(new Joueur("Rafael", "Nadal", 36, 3, "Espagne"))
+listJoueur.push(
+  new Joueur(listJoueur.length, "Albert", "Ramos", 28, 56, "Espagne")
+);
+listJoueur.push(
+  new Joueur(listJoueur.length, "Milos", "Raonic", 28, 16, "Canada")
+);
+listJoueur.push(
+  new Joueur(listJoueur.length, "Andy", "Murray", 28, 132, "Angleterre")
+);
+listJoueur.push(
+  new Joueur(listJoueur.length, "Andy", "Roddick", 36, 1000, "États-Unis")
+);
+listJoueur.push(
+  new Joueur(listJoueur.length, "Roger", "Federer", 40, 2, "Suisse")
+);
+listJoueur.push(
+  new Joueur(listJoueur.length, "Rafael", "Nadal", 36, 3, "Espagne")
+);
 
 listePartie.push(
   new Partie(

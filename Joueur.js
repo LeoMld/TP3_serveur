@@ -1,5 +1,6 @@
 class Joueur {
-  constructor(prenom, nom, age, rang, pays) {
+  constructor(id, prenom, nom, age, rang, pays) {
+    this.id = id;
     this.prenom = prenom;
     this.nom = nom;
     this.age = age;
