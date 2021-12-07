@@ -11,17 +11,17 @@ router.get("/", function (req, res) {
   const contype = req.headers["content-type"];
   if (!contype) {
     res.status(403).json({
-      err: "Content-type headers are undefined, please set it to text/html or rdf/xml",
+      err: "Content-type headers are undefined, please set it to text/html or rdf+xml",
     });
   }
   if (contype.includes("text/html")) {
     res.sendFile(path.join(__dirname, "../html/data.html"));
-  } else if (contype.includes("rdf/xml")) {
+  } else if (contype.includes("rdf+xml")) {
     res.status(200).send(RdfService.getDataRepresentation());
   } else {
     res
       .status(403)
-      .json({ err: "please set content-type to text/html or rdf/xml" });
+      .json({ err: "please set content-type to text/html or rdf+xml" });
   }
 });
 
@@ -29,7 +29,7 @@ router.get("/horaire", function (req, res) {
   const contype = req.headers["content-type"];
   if (!contype) {
     res.status(403).json({
-      err: "Content-type headers are undefined, please set it to text/html or rdf/xml",
+      err: "Content-type headers are undefined, please set it to text/html or rdf+xml",
     });
   }
   if (contype.includes("text/html")) {
@@ -52,7 +52,7 @@ router.get("/horaire", function (req, res) {
       tabContent
     );
     res.send(html);
-  } else if (contype.includes("rdf/xml")) {
+  } else if (contype.includes("rdf+xml")) {
     res.status(200).send(RdfService.getSchedulesRepresentation());
   } else {
     res.send(400);
@@ -63,7 +63,7 @@ router.get("/horaire/:id", function (req, res) {
   const contype = req.headers["content-type"];
   if (!contype) {
     res.status(403).json({
-      err: "Content-type headers are undefined, please set it to text/html or rdf/xml",
+      err: "Content-type headers are undefined, please set it to text/html or rdf+xml",
     });
   }
   if (contype.includes("text/html")) {
@@ -84,12 +84,12 @@ router.get("/horaire/:id", function (req, res) {
       tabContent
     );
     res.send(html);
-  } else if (contype.includes("rdf/xml")) {
+  } else if (contype.includes("rdf+xml")) {
     res.status(200).send(RdfService.getScheduleRepresentation(req.params.id));
   } else {
     res
       .status(403)
-      .json({ err: "please set content-type to text/html or rdf/xml" });
+      .json({ err: "please set content-type to text/html or rdf+xml" });
   }
 });
 
@@ -97,7 +97,7 @@ router.get("/joueur", function (req, res) {
   const contype = req.headers["content-type"];
   if (!contype) {
     res.status(403).json({
-      err: "Content-type headers are undefined, please set it to text/html or rdf/xml",
+      err: "Content-type headers are undefined, please set it to text/html or rdf+xml",
     });
   }
   if (contype.includes("text/html")) {
@@ -118,12 +118,12 @@ router.get("/joueur", function (req, res) {
       tabContent
     );
     res.send(html);
-  } else if (contype.includes("rdf/xml")) {
+  } else if (contype.includes("rdf+xml")) {
     res.status(200).send(RdfService.getPlayersRepresentation());
   } else {
     res
       .status(403)
-      .json({ err: "please set content-type to text/html or rdf/xml" });
+      .json({ err: "please set content-type to text/html or rdf+xml" });
   }
 });
 
@@ -131,7 +131,7 @@ router.get("/joueur/:id", function (req, res) {
   const contype = req.headers["content-type"];
   if (!contype) {
     res.status(403).json({
-      err: "Content-type headers are undefined, please set it to text/html or rdf/xml",
+      err: "Content-type headers are undefined, please set it to text/html or rdf+xml",
     });
   }
   if (contype.includes("text/html")) {
@@ -154,12 +154,12 @@ router.get("/joueur/:id", function (req, res) {
       tabContent
     );
     res.send(html);
-  } else if (contype.includes("rdf/xml")) {
+  } else if (contype.includes("rdf+xml")) {
     res.status(200).send(RdfService.getPlayerRepresentation(req.params.id));
   } else {
     res
       .status(403)
-      .json({ err: "please set content-type to text/html or rdf/xml" });
+      .json({ err: "please set content-type to text/html or rdf+xml" });
   }
 });
 
@@ -167,7 +167,7 @@ router.get("/resultat", function (req, res) {
   const contype = req.headers["content-type"];
   if (!contype) {
     res.status(403).json({
-      err: "Content-type headers are undefined, please set it to text/html or rdf/xml",
+      err: "Content-type headers are undefined, please set it to text/html or rdf+xml",
     });
   }
   if (!contype || contype.includes("text/html")) {
@@ -211,12 +211,12 @@ router.get("/resultat", function (req, res) {
       tabContent
     );
     res.send(html);
-  } else if (contype.includes("rdf/xml")) {
+  } else if (contype.includes("rdf+xml")) {
     res.status(200).send(RdfService.getResultsRepresentation());
   } else {
     res
       .status(403)
-      .json({ err: "please set content-type to text/html or rdf/xml" });
+      .json({ err: "please set content-type to text/html or rdf+xml" });
   }
 });
 
@@ -224,7 +224,7 @@ router.get("/resultat/:id", function (req, res) {
   const contype = req.headers["content-type"];
   if (!contype) {
     res.status(403).json({
-      err: "Content-type headers are undefined, please set it to text/html or rdf/xml",
+      err: "Content-type headers are undefined, please set it to text/html or rdf+xml",
     });
   }
   if (contype.includes("text/html")) {
@@ -261,12 +261,12 @@ router.get("/resultat/:id", function (req, res) {
       tabContent
     );
     res.send(html);
-  } else if (contype.includes("rdf/xml")) {
+  } else if (contype.includes("rdf+xml")) {
     res.status(200).send(RdfService.getResultRepresentation(req.params.id));
   } else {
     res
       .status(403)
-      .json({ err: "please set content-type to text/html or rdf/xml" });
+      .json({ err: "please set content-type to text/html or rdf+xml" });
   }
 });
 
